@@ -1,7 +1,5 @@
 const hamburger = document.querySelector(".hamburger");
 const navLink = document.querySelector(".nav__link");
-// select by id
-const dealsLeft = document.getElementById("dealsLeft");
 
 hamburger.addEventListener("click", () => {
   navLink.classList.toggle("hide");
@@ -43,7 +41,7 @@ function initDealCarrousel(dealCarrouselID) {
     ).offsetWidth; //you can define how far the scroll
     maxCarrouselScroll =
       document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
-        cardOutterWidth -
+        1000 -
       document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox")
         .clientWidth;
   }
@@ -66,6 +64,24 @@ function initDealCarrousel(dealCarrouselID) {
       }
     });
 }
+const slider = document.querySelector(".va-carrousel-flexbox");
+const leftArrow = document.querySelector(".deals-scroll-left");
+const rightArrow = document.querySelector(".deals-scroll-right");
+
+slider.addEventListener("scroll", () => {
+  if (slider.scrollLeft === 0) {
+    leftArrow.style.display = "none";
+  } else {
+    leftArrow.style.display = "block";
+  }
+
+  if (slider.scrollLeft === slider.scrollWidth - slider.clientWidth) {
+    rightArrow.style.display = "none";
+  } else {
+    rightArrow.style.display = "block";
+  }
+});
+
 // Initiate the container with ID
 initDealCarrousel("va_container"); //carrousel ID
 function reveal1() {

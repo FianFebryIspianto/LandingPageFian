@@ -41,7 +41,6 @@ nav a {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 4px;
-  margin-bottom: 10px;
 }
 
 .logo {
@@ -75,7 +74,6 @@ nav a {
 .nav__link a {
   display: block;
   text-align: center;
-  padding: 10px;
 }
 
 .nav__link a:hover {
@@ -681,10 +679,6 @@ input:checked ~ .tab-content {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  opacity: 1;
-}
-.deals-hidden {
-  display: none;
 }
 
 .deals-paddle:focus {
@@ -748,6 +742,9 @@ input:checked ~ .tab-content {
 }
 .mobile {
   display: contents;
+}
+.deals-scroll-left {
+  display: none;
 }
 
 @media (max-width: 768px) {
